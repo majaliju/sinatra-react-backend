@@ -1,5 +1,5 @@
 puts "🌱 Seeding spices..."
 
-# Seed your database here
+## THE DEFAULT SEED INFO FOR MY DATABASE
 
 puts "✅ Done seeding!"
