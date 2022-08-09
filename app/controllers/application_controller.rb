@@ -6,6 +6,8 @@ class ApplicationController < Sinatra::Base
     { message: "Default back-end page for now baby" }.to_json
   end
 
+
+  ## FOR SONGS
   ## get all the songs and display them all
   get "/songs" do
     songs = Song.all
@@ -39,6 +41,26 @@ class ApplicationController < Sinatra::Base
     songs.destroy
     songs.to_json
   end
+
+  ## FOR REVIEWS
+  ## get all the reviews and display them all
+  get "/reviews" do
+    reviews = Review.all
+    reviews.to_json
+  end
+
+  ## post a new review -- initialized with 0 likes & 0 dislikes
+  post "/reviews" do
+    review = Review.create(
+      likes: 0 ,
+      dislikes: 0,
+      comment: params[:comment]
+      created_at: params[:created_at],
+      updated_at: params[:updated_at]
+    )
+    review.to_json
+  end
+
 
 end
 
