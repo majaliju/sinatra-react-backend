@@ -30,7 +30,7 @@ class ApplicationController < Sinatra::Base
     songs = Message.find(params[:id])
     songs.update(
       name: params[:name],
-      year: params[:year],
+      year: params[:year]
     )
     songs.to_json
   end
@@ -52,11 +52,9 @@ class ApplicationController < Sinatra::Base
   ## post a new review -- initialized with 0 likes & 0 dislikes
   post "/reviews" do
     review = Review.create(
-      likes: 0 ,
+      likes: 0,
       dislikes: 0,
       comment: params[:comment]
-      created_at: params[:created_at],
-      updated_at: params[:updated_at]
     )
     review.to_json
   end
