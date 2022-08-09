@@ -7,17 +7,6 @@ Review.delete_all
 puts "🌱 Seeding spices..."
 
 puts "🎹 Creating Songs, Artists, Genres, and Reviews..."
-s1 = Song.create(name: 'Distant Lover', year: 1973, artist_id = a1.id, genre_id = g1.id)
-s2 = Song.create(name: 'Scottie Beam', year: 2020, artist_id = a2.id, genre_id = g2.id)
-s3 = Song.create(name: 'Bille Jean', year: 1982, artist_id = a3.id, genre_id = g3.id)
-s4 = Song.create(name: 'Maneater', year: 1982, artist_id = a4.id, genre_id = g3.id)
-s5 = Song.create(name: 'Pete\'s Jazz', year: 2001, artist_id = a5.id, genre_id = g2.id)
-s6 = Song.create(name: 'Win', year: 1975, artist_id = a6.id, genre_id = g1.id)
-s7 = Song.create(name: 'Nighttrain', year: 1987, artist_id = a7.id, genre_id = g4.id)
-s8 = Song.create(name: 'Tomorrow Comes Today', year: 2001, artist_id = a8.id, genre_id = g5.id)
-s9 = Song.create(name: 'Who Can I Run To', year: 1979, artist_id = a9.id, genre_id = g1.id)
-s10 = Song.create(name: 'She\s Not There', year: 1965, artist_id = a10.id, genre_id = d3.id)
-
 a1 = Artist.create(name: "Marvin Gaye")
 a2 = Artist.create(name: "Freddie Gibbs")
 a3 = Artist.create(name: "Michael Jackson")
@@ -36,6 +25,17 @@ g4 = Genre.create(name: "Hard Rock")
 g5 = Genre.create(name: "Alternative")
 g6 = Genre.create(name: "Indie")
 g7 = Genre.create(name: "Jazz")
+
+s1 = Song.create(name: 'Distant Lover', year: 1973, artist_id: a1.id, genre_id: g1.id)
+s2 = Song.create(name: 'Scottie Beam', year: 2020, artist_id: a2.id, genre_id: g2.id)
+s3 = Song.create(name: 'Bille Jean', year: 1982, artist_id: a3.id, genre_id: g3.id)
+s4 = Song.create(name: 'Maneater', year: 1982, artist_id: a4.id, genre_id: g3.id)
+s5 = Song.create(name: 'Pete\'s Jazz', year: 2001, artist_id: a5.id, genre_id: g2.id)
+s6 = Song.create(name: 'Win', year: 1975, artist_id: a6.id, genre_id: g1.id)
+s7 = Song.create(name: 'Nighttrain', year: 1987, artist_id: a7.id, genre_id: g4.id)
+s8 = Song.create(name: 'Tomorrow Comes Today', year: 2001, artist_id: a8.id, genre_id: g5.id)
+s9 = Song.create(name: 'Who Can I Run To', year: 1979, artist_id: a9.id, genre_id: g1.id)
+s10 = Song.create(name: 'She\s Not There', year: 1965, artist_id: a10.id, genre_id: g3.id)
 
 r1 = Review.create(likes: Faker::Number.within(range: 1..100), dislikes: Faker::Number.within(range: 1..40), comment: "Yo I love this song. Greatest song of all time!", created_at: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), updated_at: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), song_id: s1.id)
 r2 = Review.create(likes: Faker::Number.within(range: 1..100), dislikes: Faker::Number.within(range: 1..40), comment: "It's a good song but it's definitely not the best. Still very catchy.", created_at: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), updated_at: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), song_id: s4.id)
