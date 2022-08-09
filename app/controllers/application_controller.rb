@@ -6,6 +6,40 @@ class ApplicationController < Sinatra::Base
     { message: "Default back-end page for now baby" }.to_json
   end
 
+  ## get all the songs and display them all
+  get "/songs" do
+    songs = Song.all
+    songs.to_json
+  end
+
+  ## post a new song
+  post "/songs" do
+    song = Song.create(
+      name: params[:name],
+      year: params[:year],
+      created_at: params[:created_at],
+      updated_at: params[:updated_at]
+    )
+    song.to_json
+  end
+
+  ## update the elements of a song
+  patch '/songs/:id' do
+    songs = Message.find(params[:id])
+    songs.update(
+      name: params[:name],
+      year: params[:year],
+    )
+    songs.to_json
+  end
+
+  ## delete a song from the display
+  delete '/songs/:id' do
+    songs = Song.find(params[:id])
+    songs.destroy
+    songs.to_json
+  end
+
 end
 
 
