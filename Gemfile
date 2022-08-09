@@ -53,4 +53,5 @@ end
 # created this double-group to establish the Faker gem
 group :development, :test do
   gem "faker"
+  gem "rufo"
 end
