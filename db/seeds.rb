@@ -63,8 +63,4 @@ r23 = Review.create(likes: Faker::Number.within(range: 45..100), dislikes: Faker
 r24 = Review.create(likes: Faker::Number.within(range: 45..100), dislikes: Faker::Number.within(range: 1..40), comment: "From the intro beat alone...just iconic...stop it", created_at: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), updated_at: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), song_id: s3.id)
 
 
-
-
-
-
 puts "✅ Done seeding!"
