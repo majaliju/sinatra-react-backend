@@ -41,6 +41,18 @@ class ApplicationController < Sinatra::Base
     songs.to_json
   end
 
+  ## get all the artist's names in an array
+  get "/artists" do
+    artist_names = Artist.names
+    artist_names.to_json
+  end
+
+  ## get all the genre names in an array
+  get "/genres" do
+    genre_names = Genre.names
+    genre_names.to_json
+  end
+
   ## FOR REVIEWS
   ## get all the reviews and display them all
   get "/reviews" do
