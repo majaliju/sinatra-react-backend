@@ -3,15 +3,18 @@ class Song < ActiveRecord::Base
   belongs_to :artist
   belongs_to :genre
 
-  def self.artists
-    Artist
+  # stores an array of all the songs' names
+  def self.names
+    all.pluck(&:name)
   end
 
-  def self.genres
-    Genre
-  end
+  ## redundant code according to standards
+  # def self.artists
+  #   Artist
+  # end
 
-  ## in ActiveRecord, how do I send these things to an empty array?
-  @@artists_list = []
-  @@artists_list << self.artists.name
+  # def self.genres
+  #   Genre
+  # end
+
 end

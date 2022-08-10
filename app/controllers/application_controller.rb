@@ -6,7 +6,6 @@ class ApplicationController < Sinatra::Base
     { message: "Default back-end page for now baby" }.to_json
   end
 
-  ## FOR SONGS
   ## get all the songs and display them all
   get "/songs" do
     songs = Song.all
@@ -41,16 +40,16 @@ class ApplicationController < Sinatra::Base
     songs.to_json
   end
 
-  ## get all the artist's names in an array
+  ## get all the artists in an array
   get "/artists" do
-    artist_names = Artist.names
-    artist_names.to_json
+    artist = Artist.all
+    artist.to_json
   end
 
-  ## get all the genre names in an array
+  ## get all the genres in an array
   get "/genres" do
-    genre_names = Genre.names
-    genre_names.to_json
+    genre = Genre.all
+    genre.to_json
   end
 
   ## FOR REVIEWS

@@ -3,8 +3,8 @@ class Genre < ActiveRecord::Base
   has_many :artists, through: :songs
   has_many :reviews, through: :songs
 
-  # show associated genres with a selected musical Artist
-  def show_artists
-    self.artists
+  # stores an array of all the genre names
+  def self.names
+    all.pluck(&:name)
   end
 end

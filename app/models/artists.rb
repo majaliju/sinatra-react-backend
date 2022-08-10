@@ -7,9 +7,4 @@ class Artist < ActiveRecord::Base
   def self.names
     all.pluck(&:name)
   end
-
-  # show associated genres with a selected musical Artist
-  def show_genres
-    self.genres
-  end
 end
