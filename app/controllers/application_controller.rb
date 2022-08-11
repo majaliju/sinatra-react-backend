@@ -1,11 +1,6 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, "application/json"
 
-  # Add your routes here
-  get "/" do
-    { message: "Default back-end page for now baby" }.to_json
-  end
-
   ## get all the songs and display them all
   get "/songs" do
     songs = Song.all
