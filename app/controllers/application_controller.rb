@@ -20,12 +20,12 @@ class ApplicationController < Sinatra::Base
 
   ## update the elements of a song
   patch "/songs/:id" do
-    songs = Song.find(params[:id])
-    songs.update(
+    song = Song.find(params[:id])
+    song.update(
       name: params[:name],
       year: params[:year],
     )
-    songs.to_json
+    song.to_json
   end
 
   ## delete a song from the display
@@ -63,6 +63,16 @@ class ApplicationController < Sinatra::Base
     )
     review.to_json
   end
+end
+
+## update the likes and/or dislikes count for the review
+patch "/reviews/:id" do
+  review = Review.find(params[:id])
+  review.update(
+    likes: params[:likes],
+    dislikes: params[:dislikes],
+  )
+  review.to_json
 end
 
 # PROJECT CHECKLIST
