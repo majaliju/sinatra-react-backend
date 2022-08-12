@@ -7,14 +7,4 @@ class Song < ActiveRecord::Base
   def self.names
     all.pluck(&:name)
   end
-
-  ## redundant code according to standards
-  # def self.artists
-  #   Artist
-  # end
-
-  # def self.genres
-  #   Genre
-  # end
-
 end
