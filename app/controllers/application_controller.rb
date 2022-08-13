@@ -1,6 +1,10 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, "application/json"
 
+  # get "/songs/" do
+  #   "Hello World"
+  # end
+
   ## get all the songs and display them all
   get "/songs" do
     songs = Song.all
@@ -63,36 +67,36 @@ class ApplicationController < Sinatra::Base
     )
     review.to_json
   end
+
+  ## update the likes and/or dislikes count for the review
+  patch "/reviews/:id" do
+    review = Review.find(params[:id])
+    review.update(
+      likes: params[:likes],
+      dislikes: params[:dislikes],
+    )
+    review.to_json
+  end
+
+  # PROJECT CHECKLIST
+
+  # (1) CHECK
+  # Use Active Record to interact with a database.
+
+  # (2) CHECK
+  # Have at least two models with a one-to-many relationship.
+
+  # (3)
+  # full CRUD for the songs
+  # CR for the reviews (like/dislike button on them as well)
+
+  # At a minimum, set up the following API routes in Sinatra:
+  # create and read actions for both models
+  # full CRUD capability for one of the models
+
+  # (4) CHECK
+  # Build a separate React frontend application that interacts with the API to perform CRUD actions.
+
+  # (5)
+  # Use good OO design patterns. You should have separate classes for each of your models, and create instance and class methods as necessary.
 end
-
-## update the likes and/or dislikes count for the review
-patch "/reviews/:id" do
-  review = Review.find(params[:id])
-  review.update(
-    likes: params[:likes],
-    dislikes: params[:dislikes],
-  )
-  review.to_json
-end
-
-# PROJECT CHECKLIST
-
-# (1) CHECK
-# Use Active Record to interact with a database.
-
-# (2) CHECK
-# Have at least two models with a one-to-many relationship.
-
-# (3)
-# full CRUD for the songs
-# CR for the reviews (like/dislike button on them as well)
-
-# At a minimum, set up the following API routes in Sinatra:
-# create and read actions for both models
-# full CRUD capability for one of the models
-
-# (4) CHECK
-# Build a separate React frontend application that interacts with the API to perform CRUD actions.
-
-# (5)
-# Use good OO design patterns. You should have separate classes for each of your models, and create instance and class methods as necessary.
