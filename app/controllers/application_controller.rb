@@ -1,9 +1,11 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, "application/json"
 
-  # get "/songs/" do
-  #   "Hello World"
-  # end
+  ## test the access for :song_id = 40 but via the review
+  get "/reviews/:id" do
+    review = Review.find(params[:id])
+    review.to_json
+  end
 
   ## get all the songs and display them all
   get "/songs" do
