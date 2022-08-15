@@ -1,7 +1,8 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, "application/json"
 
-  ## test the access for :song_id = 40 but via the review
+  ## test the access for the reviews; attempting to fix PATCH request
+  ## it works
   get "/reviews/:id" do
     review = Review.find(params[:id])
     review.to_json
