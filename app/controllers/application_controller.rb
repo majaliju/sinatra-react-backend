@@ -21,8 +21,14 @@ class ApplicationController < Sinatra::Base
   ## update the year of a song
   patch "/songs/:id" do
     song = Song.find(params[:id])
+
+    ## find an active record method that allows me to filter
+    ## IDs so that I can update Artist & Genre thru Song
+    genre = Genre.find()
+    artist = Artist.find()
     song.update(
       year: params[:year],
+
     )
     song.to_json
   end
@@ -67,6 +73,7 @@ class ApplicationController < Sinatra::Base
       likes: 0,
       dislikes: 0,
       comment: params[:comment],
+      song_id: params[:song_id],
     )
     review.to_json
   end

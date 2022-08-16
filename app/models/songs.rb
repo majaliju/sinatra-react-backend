@@ -7,4 +7,14 @@ class Song < ActiveRecord::Base
   def self.names
     all.pluck(&:name)
   end
+
+  # returns the song's genre
+  def which_genre
+    self.genre
+  end
+
+  # returns the song's artist
+  def which_genre
+    self.genre
+  end
 end
