@@ -1,13 +1,6 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, "application/json"
 
-  ## test the access for the reviews; attempting to fix PATCH request
-  ## it works
-  get "/reviews/:id" do
-    review = Review.find(params[:id])
-    review.to_json
-  end
-
   ## get all the songs and display them all
   get "/songs" do
     songs = Song.all
@@ -55,6 +48,14 @@ class ApplicationController < Sinatra::Base
   end
 
   ## FOR REVIEWS
+
+  ## test the access for the reviews; attempting to fix PATCH request
+  ## it works
+  get "/reviews/:id" do
+    review = Review.find(params[:id])
+    review.to_json
+  end
+
   ## get all the reviews and display them all
   get "/reviews" do
     reviews = Review.all
