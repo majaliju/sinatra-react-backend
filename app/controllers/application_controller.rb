@@ -9,11 +9,15 @@ class ApplicationController < Sinatra::Base
 
   ## post a new song
   post "/songs" do
+    # if :id == Song.find(:id) do
+    #   put "wont work!"
+    # else do
     song = Song.create(
       name: params[:name],
       year: params[:year],
-      created_at: params[:created_at],
-      updated_at: params[:updated_at],
+      # sent the artistName here, to where artist.id == song.artist_id
+      # sent the genreName here, to where genre.id == song.genre_id
+
     )
     song.to_json
   end
@@ -21,17 +25,21 @@ class ApplicationController < Sinatra::Base
   ## update the year of a song
   patch "/songs/:id" do
     song = Song.find(params[:id])
-
-    ## find an active record method that allows me to filter
-    ## IDs so that I can update Artist & Genre thru Song
-    genre = Genre.find()
-    artist = Artist.find()
     song.update(
       year: params[:year],
-
     )
     song.to_json
   end
+
+  #  ## update the genre name of a song
+  #  #### GOTTA DEVELOP THIS ONE
+  #  patch "/songs/:id" do
+  #   song = Song.find(params[:id])
+  #   genre = Genre.find(song)
+  #   then update genre.name to that incoming value
+  #   genre.update() or song.update()
+
+  # end
 
   ## delete a song from the display
   delete "/songs/:id" do

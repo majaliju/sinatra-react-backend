@@ -10,11 +10,11 @@ class Song < ActiveRecord::Base
 
   # returns the song's genre
   def which_genre
-    self.genre
+    self.genre.name
   end
 
   # returns the song's artist
-  def which_genre
-    self.genre
+  def which_artist
+    self.artist.name
   end
 end
