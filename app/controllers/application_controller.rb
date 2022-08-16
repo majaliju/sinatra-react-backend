@@ -18,11 +18,10 @@ class ApplicationController < Sinatra::Base
     song.to_json
   end
 
-  ## update the elements of a song
+  ## update the year of a song
   patch "/songs/:id" do
     song = Song.find(params[:id])
     song.update(
-      name: params[:name],
       year: params[:year],
     )
     song.to_json
@@ -81,26 +80,26 @@ class ApplicationController < Sinatra::Base
     )
     review.to_json
   end
-
-  # PROJECT CHECKLIST
-
-  # (1) CHECK
-  # Use Active Record to interact with a database.
-
-  # (2) CHECK
-  # Have at least two models with a one-to-many relationship.
-
-  # (3)
-  # full CRUD for the songs
-  # CR for the reviews (like/dislike button on them as well)
-
-  # At a minimum, set up the following API routes in Sinatra:
-  # create and read actions for both models
-  # full CRUD capability for one of the models
-
-  # (4) CHECK
-  # Build a separate React frontend application that interacts with the API to perform CRUD actions.
-
-  # (5)
-  # Use good OO design patterns. You should have separate classes for each of your models, and create instance and class methods as necessary.
 end
+
+# PROJECT CHECKLIST
+
+# (1) CHECK
+# Use Active Record to interact with a database.
+
+# (2) CHECK
+# Have at least two models with a one-to-many relationship.
+
+# (3)
+# full CRUD for the songs
+# CR for the reviews (like/dislike button on them as well)
+
+# At a minimum, set up the following API routes in Sinatra:
+# create and read actions for both models
+# full CRUD capability for one of the models
+
+# (4) CHECK
+# Build a separate React frontend application that interacts with the API to perform CRUD actions.
+
+# (5)
+# Use good OO design patterns. You should have separate classes for each of your models, and create instance and class methods as necessary.
