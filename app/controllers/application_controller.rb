@@ -7,16 +7,36 @@ class ApplicationController < Sinatra::Base
     songs.to_json
   end
 
-  ## post a new song
+  # ## POST method using artist_attributes
+  # ## need better comprehension here though
+  # ## post a new song
+  # post "/songs" do
+  #   song = Song.create(
+  #     name: params[:songName],
+  #     year: params[:year],
+  #     artist_attribute: { name: params[:artistName] },
+  #     genre_attribute: { name: params[:genreName] },
+  #   )
+  #   song.to_json
+  # end
+
   post "/songs" do
-    genreID = find_or_create_by(id: params[:genre_id])
-    artistID = find_or_create_by(id: params[:artist_id])
+    # artist_id = Artist.find_by(name: params[:artistName]) || Artist.create(name: params[:artistName]),
+    # genre_id = Genre.find_by(name: params[:genreName]) || Genre.create(name: params[:genreName]),
+    # thisArtist = Artist.find_or_create_by(name: params[:artistName]),
+    #              thisGenre = Genre.find_or_create_by(name: params[:genreName]),
+    artist = Artist.create(name: params[:artistName]),
+    genre = Genre.create(name: params[:genreName])
     song = Song.create(
-      name: params[:name],
+      name: params[:songName],
       year: params[:year],
-      artist_id: artistID,
-      genre_id: genreID,
+      # thisArtist: params[:artistName],
+      # thisGenre: params[:genreName],
+      artist_id: artist.id,
+      genre_id: genre.id,
+
     )
+
     song.to_json
   end
 
