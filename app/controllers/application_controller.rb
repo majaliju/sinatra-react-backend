@@ -9,15 +9,13 @@ class ApplicationController < Sinatra::Base
 
   ## post a new song
   post "/songs" do
-    # if :id == Song.find(:id) do
-    #   put "wont work!"
-    # else do
+    genreID = find_or_create_by(id: params[:genre_id])
+    artistID = find_or_create_by(id: params[:artist_id])
     song = Song.create(
       name: params[:name],
       year: params[:year],
-      # sent the artistName here, to where artist.id == song.artist_id
-      # sent the genreName here, to where genre.id == song.genre_id
-
+      artist_id: artistID,
+      genre_id: genreID,
     )
     song.to_json
   end
