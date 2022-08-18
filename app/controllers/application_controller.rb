@@ -3,52 +3,39 @@ class ApplicationController < Sinatra::Base
 
   ## get all the songs and display them all
   get "/songs" do
-    songs = Song.all
+    songs = Song.all.order(:name)
     songs.to_json
   end
 
-  # ## POST method using artist_attributes
-  # ## need better comprehension here though
-  # ## post a new song
-  # post "/songs" do
-  #   song = Song.create(
-  #     name: params[:songName],
-  #     year: params[:year],
-  #     artist_attribute: { name: params[:artistName] },
-  #     genre_attribute: { name: params[:genreName] },
-  #   )
-  #   song.to_json
-  # end
-
+  ## POST method using artist_attributes; need better comprehension here though
+  ## post a new song
   post "/songs" do
-    # artist_id = Artist.find_by(name: params[:artistName]) || Artist.create(name: params[:artistName]),
-    # genre_id = Genre.find_by(name: params[:genreName]) || Genre.create(name: params[:genreName]),
-    # thisArtist = Artist.find_or_create_by(name: params[:artistName]),
-    #              thisGenre = Genre.find_or_create_by(name: params[:genreName]),
-    # this_artist = Artist.find_or_create_by(name: params[:artistName]),
-    # binding.pry
-    # this_genre = Genre.find_or_create_by(name: params[:genreName])
-    # binding.pry
     song = Song.create(
       name: params[:name],
       year: params[:year],
-      # artist: [name: params[:artistName]],
-      # genre: [name: params[:genreName]],
+      artist_attributes: { name: params[:artistName] },
+      genre_attributes: { name: params[:genreName] },
     )
-
-    artist = Artist.find_or_create_by(
-      name: params[:name],
-    )
-
-    genre = Genre.find_or_create_by(
-      name: params[:name],
-    )
-    # song.artist_id = artist.id
-    # song.genre_id = genre.id
-    binding.pry
-
     song.to_json
   end
+
+  # post "/songs" do
+  #   # artist_id = Artist.find_by(name: params[:artistName]) || Artist.create(name: params[:artistName]),
+  #   # genre_id = Genre.find_by(name: params[:genreName]) || Genre.create(name: params[:genreName]),
+  #   # thisArtist = Artist.find_or_create_by(name: params[:artistName]),
+  #   #              thisGenre = Genre.find_or_create_by(name: params[:genreName]),
+  #   # this_artist = Artist.find_or_create_by(name: params[:artistName]),
+  #   # binding.pry
+  #   # this_genre = Genre.find_or_create_by(name: params[:genreName])
+  #   # binding.pry
+  #   song = Song.create(
+  #     name: params[:name],
+  #     year: params[:year],
+  #     artist: [name: params[:artistName]],
+  #     genre: [name: params[:genreName]],
+  #   )
+  #   song.to_json
+  # end
 
   ## update the year of a song
   patch "/songs/:id" do
@@ -78,24 +65,17 @@ class ApplicationController < Sinatra::Base
 
   ## get all the artists in an array
   get "/artists" do
-    artist = Artist.all
+    artist = Artist.all.order(:name)
     artist.to_json
   end
 
   ## get all the genres in an array
   get "/genres" do
-    genre = Genre.all
+    genre = Genre.all.order(:name)
     genre.to_json
   end
 
   ## FOR REVIEWS
-
-  ## test the access for the reviews; attempting to fix PATCH request
-  ## it works
-  get "/reviews/:id" do
-    review = Review.find(params[:id])
-    review.to_json
-  end
 
   ## get all the reviews and display them all
   get "/reviews" do

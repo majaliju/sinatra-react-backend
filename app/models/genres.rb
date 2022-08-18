@@ -3,6 +3,8 @@ class Genre < ActiveRecord::Base
   has_many :artists, through: :songs
   has_many :reviews, through: :songs
 
+  accepts_nested_attributes_for :artists, :songs
+
   # stores an array of all the genre names
   def self.names
     all.pluck(&:name)
