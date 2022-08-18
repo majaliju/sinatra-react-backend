@@ -25,17 +25,27 @@ class ApplicationController < Sinatra::Base
     # genre_id = Genre.find_by(name: params[:genreName]) || Genre.create(name: params[:genreName]),
     # thisArtist = Artist.find_or_create_by(name: params[:artistName]),
     #              thisGenre = Genre.find_or_create_by(name: params[:genreName]),
-    artist = Artist.create(name: params[:artistName]),
-    genre = Genre.create(name: params[:genreName])
+    # this_artist = Artist.find_or_create_by(name: params[:artistName]),
+    # binding.pry
+    # this_genre = Genre.find_or_create_by(name: params[:genreName])
+    # binding.pry
     song = Song.create(
-      name: params[:songName],
+      name: params[:name],
       year: params[:year],
-      # thisArtist: params[:artistName],
-      # thisGenre: params[:genreName],
-      artist_id: artist.id,
-      genre_id: genre.id,
-
+      # artist: [name: params[:artistName]],
+      # genre: [name: params[:genreName]],
     )
+
+    artist = Artist.find_or_create_by(
+      name: params[:name],
+    )
+
+    genre = Genre.find_or_create_by(
+      name: params[:name],
+    )
+    # song.artist_id = artist.id
+    # song.genre_id = genre.id
+    binding.pry
 
     song.to_json
   end
