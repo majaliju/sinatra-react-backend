@@ -10,9 +10,9 @@ class Artist < ActiveRecord::Base
     all.pluck(&:name)
   end
 
-  # allows access to sub-objects of Song
-  def artist_attributes=(artist)
-    self.artist = Artist.find_or_create_by(name: artist[:name])
-    self.artist.update(artist)
+  # removes duplicates of artists' names
+  def self.cleanup
+    self.names.uniq
+    puts self.names.uniq
   end
 end

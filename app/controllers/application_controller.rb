@@ -9,8 +9,10 @@ class ApplicationController < Sinatra::Base
 
   ## post a new song
   post "/songs" do
-    artist = Artist.find_or_create_by(name: params[:artist][:name])
+    artist = Artist.find_or_create_by(name: (params[:artist][:name]))
+    # gotta add a cross-check here to remove any identical names
     genre = Genre.find_or_create_by(name: params[:genre][:name])
+    # gotta add a cross-check here to remove any identical names
     artist.update(
       name: params[:artist][:name],
     )
@@ -26,24 +28,6 @@ class ApplicationController < Sinatra::Base
     song.to_json
   end
 
-  # post "/songs" do
-  #   # artist_id = Artist.find_by(name: params[:artistName]) || Artist.create(name: params[:artistName]),
-  #   # genre_id = Genre.find_by(name: params[:genreName]) || Genre.create(name: params[:genreName]),
-  #   # thisArtist = Artist.find_or_create_by(name: params[:artistName]),
-  #   #              thisGenre = Genre.find_or_create_by(name: params[:genreName]),
-  #   # this_artist = Artist.find_or_create_by(name: params[:artistName]),
-  #   # binding.pry
-  #   # this_genre = Genre.find_or_create_by(name: params[:genreName])
-  #   # binding.pry
-  #   song = Song.create(
-  #     name: params[:name],
-  #     year: params[:year],
-  #     artist: [name: params[:artistName]],
-  #     genre: [name: params[:genreName]],
-  #   )
-  #   song.to_json
-  # end
-
   ## update the year of a song
   ## gotta also create the genre.name update here
   patch "/songs/:id" do
@@ -53,16 +37,6 @@ class ApplicationController < Sinatra::Base
     )
     song.to_json
   end
-
-  #  ## update the genre name of a song
-  #  #### GOTTA DEVELOP THIS ONE
-  #  patch "/songs/:id" do
-  #   song = Song.find(params[:id])
-  #   genre = Genre.find(song)
-  #   then update genre.name to that incoming value
-  #   genre.update() or song.update()
-
-  # end
 
   ## delete a song from the display
   delete "/songs/:id" do
@@ -121,7 +95,7 @@ end
 # (2) CHECK
 # Have at least two models with a one-to-many relationship.
 
-# (3)
+# (3) CHECK
 # full CRUD for the songs
 # CR for the reviews (like/dislike button on them as well)
 
@@ -132,5 +106,5 @@ end
 # (4) CHECK
 # Build a separate React frontend application that interacts with the API to perform CRUD actions.
 
-# (5)
+# (5) CHECK
 # Use good OO design patterns. You should have separate classes for each of your models, and create instance and class methods as necessary.
