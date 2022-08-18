@@ -7,7 +7,6 @@ class ApplicationController < Sinatra::Base
     songs.to_json
   end
 
-  ## POST method using artist_attributes; need better comprehension here though
   ## post a new song
   post "/songs" do
     artist = Artist.find_or_create_by(name: params[:artist][:name])
