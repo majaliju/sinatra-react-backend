@@ -4,15 +4,11 @@ class Artist < ActiveRecord::Base
   has_many :reviews, through: :songs
 
   accepts_nested_attributes_for :genres, :songs
+  before_save :title_fixer
 
-  # stores an array of all the artists' names
-  def self.names
-    all.pluck(&:name)
-  end
-
-  # removes duplicates of artists' names
-  def self.cleanup
-    self.names.uniq
-    puts self.names.uniq
+  ## corrects the title capitilzation
+  ## always launched before a song saves
+  def title_fixer
+    self.name = self.name.split(/ |\_/).map(&:capitalize).join(" ")
   end
 end

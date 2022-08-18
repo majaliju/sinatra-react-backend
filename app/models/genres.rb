@@ -4,9 +4,11 @@ class Genre < ActiveRecord::Base
   has_many :reviews, through: :songs
 
   accepts_nested_attributes_for :artists, :songs
+  before_save :title_fixer
 
-  # stores an array of all the genre names
-  def self.names
-    all.pluck(&:name)
+  ## corrects the title capitilzation
+  ## always launched before a song saves
+  def title_fixer
+    self.name = self.name.split(/ |\_/).map(&:capitalize).join(" ")
   end
 end
