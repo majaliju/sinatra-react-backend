@@ -1,7 +1,7 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, "application/json"
 
-  ## get all the songs and display them all
+  ## get all the songs and display them all, alphabetical order
   get "/songs" do
     songs = Song.all.order(:name)
     songs.to_json
@@ -10,11 +10,19 @@ class ApplicationController < Sinatra::Base
   ## POST method using artist_attributes; need better comprehension here though
   ## post a new song
   post "/songs" do
+    artist = Artist.find_or_create_by(name: params[:artist][:name])
+    genre = Genre.find_or_create_by(name: params[:genre][:name])
+    artist.update(
+      name: params[:artist][:name],
+    )
+    genre.update(
+      name: params[:genre][:name],
+    )
     song = Song.create(
       name: params[:name],
       year: params[:year],
-      artist_attributes: { name: params[:artistName] },
-      genre_attributes: { name: params[:genreName] },
+      artist_id: artist.id,
+      genre_id: genre.id,
     )
     song.to_json
   end
@@ -38,6 +46,7 @@ class ApplicationController < Sinatra::Base
   # end
 
   ## update the year of a song
+  ## gotta also create the genre.name update here
   patch "/songs/:id" do
     song = Song.find(params[:id])
     song.update(
@@ -63,13 +72,13 @@ class ApplicationController < Sinatra::Base
     songs.to_json
   end
 
-  ## get all the artists in an array
+  ## get all the artists in an array, alphabetical order
   get "/artists" do
     artist = Artist.all.order(:name)
     artist.to_json
   end
 
-  ## get all the genres in an array
+  ## get all the genres in an array, alphabetical order
   get "/genres" do
     genre = Genre.all.order(:name)
     genre.to_json
