@@ -11,11 +11,6 @@ class Artist < ActiveRecord::Base
 
   def title_fixer
     ## add a case to capitalize after [&, -, /]
-    self.name = self.name.split(/ |\_|&|\//).map(&:capitalize).join(" ")
+    self.name = self.name.split(/ |\_/).map(&:capitalize).join(" ")
   end
-
-  # def duplicate_checker(name)
-  #   self.name = self.find_or_create_by(name)
-  #   ## check if the item already exists, if so
-  # end
 end

@@ -4,16 +4,12 @@ class Genre < ActiveRecord::Base
   has_many :reviews, through: :songs
 
   accepts_nested_attributes_for :artists, :songs
-  before_save :title_fixer,
-              # :duplicate_checker
+  before_save :title_fixer
 
-              ## corrects the title capitilzation
-              ## always launched before a genre saves
-              def title_fixer
-                ## add a case to capitalize after [&, -, /]
-                self.name = self.name.split(/ |\_/).map(&:capitalize).join(" ")
-              end
-
-  # def duplicate_checker
-  # end
+  ## corrects the title capitilzation
+  ## always launched before a genre saves
+  def title_fixer
+    ## add a case to capitalize after [&, -, /]
+    self.name = self.name.split(/ |\_/).map(&:capitalize).join(" ")
+  end
 end
