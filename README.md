@@ -1,7 +1,7 @@
 # BACKEND of BEST SONG REVIEWS
 
-<!-- <img src="https://img.shields.io/badge/phase2-project-blue?style=flat-square&logo=react"> -->
-<img src="https://img.shields.io/badge/phase2-project-blue?style=flat-square&logo=react">
+<!-- <img src="https://img.shields.io/badge/phase3-project-red?style=flat-square&logo=ruby"> -->
+<img src="https://img.shields.io/badge/phase3-project-red?style=flat-square&logo=ruby">
 
 ## WHAT IS THIS?
 - This is the backend of the BEST SONG REVIEWS website.
