@@ -18,7 +18,9 @@
 
 ## WHERE?
 [You can use the BEST SONG REVIEWS website right here!](https://majaliju.com/)
+
 [The backend is hosted here.](https://majaliju.com/)
+
 [The frontend repo is here on GitHub.](https://majaliju.com/)
 
 ## TOOLS
