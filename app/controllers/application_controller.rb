@@ -3,8 +3,12 @@ class ApplicationController < Sinatra::Base
 
   ## get all the songs and display them all, alphabetical order
   get "/songs" do
+    # songs = Song.all.order(:name)
+    # songs.to_json
+
+    # successfully adds the artist to each song
     songs = Song.all.order(:name)
-    songs.to_json
+    songs.to_json(include: :artist)
   end
 
   ## post a new song
@@ -85,26 +89,18 @@ class ApplicationController < Sinatra::Base
     )
     review.to_json
   end
+
+  private
+
+  def serialize(objects)
+    objects.to_json(
+      include: {
+        artist: {
+          include: [
+            :name,
+          ],
+        },
+      },
+    )
+  end
 end
-
-# PROJECT CHECKLIST
-
-# (1) CHECK
-# Use Active Record to interact with a database.
-
-# (2) CHECK
-# Have at least two models with a one-to-many relationship.
-
-# (3) CHECK
-# full CRUD for the songs
-# CR for the reviews (like/dislike button on them as well)
-
-# At a minimum, set up the following API routes in Sinatra:
-# create and read actions for both models
-# full CRUD capability for one of the models
-
-# (4) CHECK
-# Build a separate React frontend application that interacts with the API to perform CRUD actions.
-
-# (5) CHECK
-# Use good OO design patterns. You should have separate classes for each of your models, and create instance and class methods as necessary.
