@@ -26,7 +26,9 @@
 ## TOOLS
 Some of the tools I used on the backend specifically were:
 [Ruby]
+[Sinatra]
 [ActiveRecord]
 
 ## BLOG
+[A link to my blog about phase3 can be found here, where I discuss]
 
