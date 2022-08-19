@@ -5,7 +5,7 @@ class ApplicationController < Sinatra::Base
   ## also includes the Artist and Genre for each
   get "/songs" do
     songs = Song.all.order(:name)
-    songs.to_json(include: [:artist, :genre])
+    songs.to_json(include: [:artist, :genre, :reviews])
   end
 
   ## post a new song
