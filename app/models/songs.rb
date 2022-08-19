@@ -5,8 +5,7 @@ class Song < ActiveRecord::Base
 
   accepts_nested_attributes_for :genre, :artist, :reviews
   before_save :title_fixer
-  # after_destroy :cleanup
-  ## enable this after testing it in the DELETE again
+  after_destroy :cleanup
 
   def title_fixer
     ## add a case to capitalize after [&, -, /]
@@ -16,10 +15,15 @@ class Song < ActiveRecord::Base
   ## cleanup any artists and genres that no longer exists if song is deleted
   def cleanup
     song = self
-
-    ## check if only 1 occurrence exists of each artist and genre
-    ## if so, artist.destroy and genre.destroy
-    artist = Artist.find(song.artist_id)
-    genre = Genre.find(song.genre_id)
+    match1 = Song.all.select { |each| song.artist.name === each.artist.name }
+    if match1.empty?
+      Artist.find(song.artist_id).destroy
+    end
+    match2 = Song.all.select { |each| song.genre.name === each.genre.name }
+    if match2.empty?
+      Genre.find(song.genre_id).destroy
+    end
+    identifier = song.id
+    Review.where(:song_id => identifier).destroy_all
   end
 end

@@ -36,6 +36,10 @@ s7 = Song.create(name: 'Nighttrain', year: 1987, artist_id: a7.id, genre_id: g4.
 s8 = Song.create(name: 'Tomorrow Comes Today', year: 2001, artist_id: a8.id, genre_id: g5.id)
 s9 = Song.create(name: 'Who Can I Run To', year: 1979, artist_id: a9.id, genre_id: g1.id)
 s10 = Song.create(name: 'She\'s Not There', year: 1965, artist_id: a10.id, genre_id: g3.id)
+s11 = Song.create(name: 'Beat It', year: 1982, artist_id: a3.id, genre_id: g3.id)
+s12 = Song.create(name: 'Man in The Mirror', year: 1988, artist_id: a3.id, genre_id: g3.id)
+s13 = Song.create(name: 'Human Nature', year: 1982, artist_id: a3.id, genre_id: g3.id)
+s14 = Song.create(name: 'Thriller', year: 1982, artist_id: a3.id, genre_id: g3.id)
 
 r1 = Review.create(likes: Faker::Number.within(range: 45..100), dislikes: Faker::Number.within(range: 10..60), comment: "Yo I love this song. Greatest song of all time!", song_id: s1.id)
 r2 = Review.create(likes: Faker::Number.within(range: 45..100), dislikes: Faker::Number.within(range: 10..40), comment: "It's a good song but it's definitely not the best. Still very catchy.", song_id: s4.id)
