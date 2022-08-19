@@ -16,10 +16,15 @@
 
 
 
-## **WHERE?**
-[You can find it at my website here!](https://majaliju.com/)
+## WHERE?
+[You can use the BEST SONG REVIEWS website right here!](https://majaliju.com/)
+[The backend is hosted here.](https://majaliju.com/)
+[The frontend repo is here on GitHub.](https://majaliju.com/)
 
-## **TOOLS**
-Some of the tools I used on this were:
+## TOOLS
+Some of the tools I used on the backend specifically were:
+[Ruby]
+[ActiveRecord]
 
 ## BLOG
+
