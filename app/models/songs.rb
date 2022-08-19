@@ -15,6 +15,6 @@ class Song < ActiveRecord::Base
   end
 
   def matching_artists
-    puts "test"
+    puts "matching_artist test"
   end
 end
