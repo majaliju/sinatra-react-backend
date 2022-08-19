@@ -2,21 +2,16 @@ class ApplicationController < Sinatra::Base
   set :default_content_type, "application/json"
 
   ## get all the songs and display them all, alphabetical order
+  ## also includes the Artist and Genre for each
   get "/songs" do
-    # songs = Song.all.order(:name)
-    # songs.to_json
-
-    # successfully adds the artist to each song
     songs = Song.all.order(:name)
-    songs.to_json(include: :artist)
+    songs.to_json(include: [:artist, :genre])
   end
 
   ## post a new song
   post "/songs" do
     artist = Artist.find_or_create_by(name: (params[:artist][:name]))
-    # gotta add a cross-check here to remove any identical names
     genre = Genre.find_or_create_by(name: params[:genre][:name])
-    # gotta add a cross-check here to remove any identical names
     artist.update(
       name: params[:artist][:name],
     )
