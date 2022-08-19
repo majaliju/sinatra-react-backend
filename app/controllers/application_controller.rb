@@ -3,7 +3,7 @@ class ApplicationController < Sinatra::Base
 
   ## get all the songs and display them all, alphabetical order
   get "/songs" do
-    songs = Song.all
+    songs = Song.all.order(:name)
     songs.to_json
   end
 
@@ -47,13 +47,13 @@ class ApplicationController < Sinatra::Base
 
   ## get all the artists in an array, alphabetical order
   get "/artists" do
-    artist = Artist.all
+    artist = Artist.all.order(:name)
     artist.to_json
   end
 
   ## get all the genres in an array, alphabetical order
   get "/genres" do
-    genre = Genre.all
+    genre = Genre.all.order(:name)
     genre.to_json
   end
 
