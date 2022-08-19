@@ -8,7 +8,7 @@
 
 ## INTRODUCTION
 
-- Since the beginning of recorded history, humans have expressed an interest in music. The spectrum of musical appreciation can range from anthropologically significant to mere background noise while doing dishes. Nonetheless, all lovers of music have a preference towards certain types. These are often call, at least in the Western World, our "favorite songs."
+- Since the beginning of recorded history, humans have expressed an interest in music. The spectrum of musical appreciation can range from anthropological significance all the way to mere background noise while doing dishes. Nonetheless, all lovers of music have a preference towards certain types. These are often call, at least in the Western World, our "favorite songs."
 
 
 
@@ -24,10 +24,13 @@
 [The frontend repo is here on GitHub.](https://majaliju.com/)
 
 ## TOOLS
-Some of the tools I used on the backend specifically were:
+On the backend, I used:
 [Ruby]
 [Sinatra]
 [ActiveRecord]
+On the frontend, I used:
+[React]
+[ChakraUI]
 
 ## BLOG
 [A link to my blog about phase3 can be found here, where I discuss]
