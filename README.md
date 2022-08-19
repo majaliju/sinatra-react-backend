@@ -1,8 +1,25 @@
 # BACKEND of BEST SONG REVIEWS
 
+<!-- <img src="https://img.shields.io/badge/phase2-project-blue?style=flat-square&logo=react"> -->
+<img src="https://img.shields.io/badge/phase2-project-blue?style=flat-square&logo=react">
+
+## WHAT IS THIS?
+- This is the backend of the BEST SONG REVIEWS website.
+
 ## INTRODUCTION
 
 - Since the beginning of recorded history, humans have expressed an interest in music. The spectrum of musical appreciation can range from anthropologically significant to mere background noise while doing dishes. Nonetheless, all lovers of music have a preference towards certain types. These are often call, at least in the Western World, our "favorite songs."
 
-## WHAT IS THIS?
-- This is the backend of the BEST SONG REVIEWS website.
+
+
+## A BRIEF VISUAL IN ACTION
+
+
+
+## **WHERE?**
+[You can find it at my website here!](https://majaliju.com/)
+
+## **TOOLS**
+Some of the tools I used on this were:
+
+## BLOG
