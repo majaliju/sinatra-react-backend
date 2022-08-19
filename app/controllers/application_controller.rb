@@ -42,13 +42,9 @@ class ApplicationController < Sinatra::Base
 
   ## delete a song from the display
   delete "/songs/:id" do
-    # see if either one exists after the delete
-    # if they dont; delete it as well
     song = Song.find(params[:id])
-    genre = Genre.find(song.genre_id)
-    artist = Artist.find(song.artist_id)
     song.destroy
-
+    song.cleanup
     song.to_json(include: [:artist, :genre, :reviews])
   end
 
