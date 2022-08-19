@@ -24,24 +24,32 @@ class ApplicationController < Sinatra::Base
       artist_id: artist.id,
       genre_id: genre.id,
     )
-    song.to_json
+    song.to_json(include: [:artist, :genre, :reviews])
   end
 
-  ## update the year of a song
-  ## gotta also create the genre.name update here
+  ## update the genre of a song
   patch "/songs/:id" do
     song = Song.find(params[:id])
-    song.update(
-      year: params[:year],
+    genre = Genre.find_or_create_by(name: params[:genre][:name])
+    genre.update(
+      name: params[:genre][:name],
     )
-    song.to_json
+    song.update(
+      genre_id: genre.id,
+    )
+    song.to_json(include: [:artist, :genre, :reviews])
   end
 
   ## delete a song from the display
   delete "/songs/:id" do
-    songs = Song.find(params[:id])
-    songs.destroy
-    songs.to_json
+    # see if either one exists after the delete
+    # if they dont; delete it as well
+    song = Song.find(params[:id])
+    genre = Genre.find(song.genre_id)
+    artist = Artist.find(song.artist_id)
+    song.destroy
+
+    song.to_json(include: [:artist, :genre, :reviews])
   end
 
   ## get all the artists in an array, alphabetical order
@@ -83,19 +91,5 @@ class ApplicationController < Sinatra::Base
       dislikes: params[:dislikes],
     )
     review.to_json
-  end
-
-  private
-
-  def serialize(objects)
-    objects.to_json(
-      include: {
-        artist: {
-          include: [
-            :name,
-          ],
-        },
-      },
-    )
   end
 end
