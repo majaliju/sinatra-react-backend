@@ -8,3 +8,7 @@ Bundler.require(:default, ENV["RACK_ENV"])
 
 # Require in all files in 'app' directory
 require_all "app"
+
+require "active_record"
+
+ActiveRecord::Base.establish_connection(ENV["DATABASE_URL"] || "postgres://localhost/mydb")
