@@ -50,7 +50,7 @@ group :test do
   gem "rspec-json_expectations", "~> 2.2"
 end
 
-# created this double-group to establish the Faker gem
+# created this triple-group to establish the Faker gem
 group :development, :test, :production do
   gem "faker"
 end

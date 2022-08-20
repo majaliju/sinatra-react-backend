@@ -1,1 +1,1 @@
-bundle exec rake server
+web: bundle exec rackup config.ru -p $PORT
