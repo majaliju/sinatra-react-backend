@@ -12,7 +12,7 @@ class Song < ActiveRecord::Base
     self.name = self.name.split(/ |\_/).map(&:capitalize).join(" ")
   end
 
-  ## cleanup any artists, genres that no longer exists if song is deleted
+  ## delete any artists, genres that no longer exists if song is deleted
   ## delete all reviews associated with the song also
   def cleanup
     song = self

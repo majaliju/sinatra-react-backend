@@ -7,8 +7,6 @@ class Artist < ActiveRecord::Base
   before_save :title_fixer
 
   ## corrects the title capitilzation
-  ## always launched before an artist saves
-
   def title_fixer
     ## add a case to capitalize after [&, -, /]
     self.name = self.name.split(/ |\_/).map(&:capitalize).join(" ")
