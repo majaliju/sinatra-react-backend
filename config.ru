@@ -1,4 +1,6 @@
 require_relative "./config/environment"
+
+## added myself, for the seeding
 require "faker"
 
 # Allow CORS (Cross-Origin Resource Sharing) requests
