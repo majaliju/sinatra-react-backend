@@ -31,15 +31,12 @@ gem "rake", "~> 13.0"
 # # Provides functionality to interact with a SQLite3 database
 # gem "sqlite3", "~> 1.4"
 
-## COMMENTED OUT gem sqlite3 AND REPLACED WITH THIS FOR HEROKU DEPLOYMENT
-gem 'pg'
-
 # Require all files in a folder
 gem "require_all", "~> 3.0"
 
 # These gems will only be used when we are running the application locally
 group :development do
-  gem "pry", "~> 0.14.1"
+  # gem "pry", "~> 0.14.1"
   # Automatically reload when there are changes
   # https://github.com/alexch/rerun
   gem "rerun"
@@ -54,6 +51,15 @@ group :test do
 end
 
 # created this double-group to establish the Faker gem
-group :development, :test do
+group :development, :test, :production do
   gem "faker"
+end
+
+group :production do
+	gem 'pg'
+end
+
+group :development, :test do
+  gem "pry", "~> 0.14.1"
+	gem 'sqlite3'
 end
