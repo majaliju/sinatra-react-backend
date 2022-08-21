@@ -62,7 +62,9 @@ group :production do
 	gem 'pg'
 end
 
+	gem 'pg'
+
 group :development, :test do
   gem "pry", "~> 0.14.1"
-	gem 'sqlite3'
+	# gem 'sqlite3'
 end
