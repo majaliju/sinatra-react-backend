@@ -19,14 +19,10 @@
 ## WHERE?
 [You can use the BEST SONG REVIEWS website right here!](https://majaliju.com/)<br />
 
-
-[The backend is hosted here.](https://github.com/majaliju/sinatra-react-backend)<br />
-
-
 [The frontend repo is here on GitHub.](https://github.com/majaliju/sinatra-react-frontend)<br />
 
 ## TOOLS
-On the backend, I used:
+On the backend, I used:<br />
 [Ruby](https://www.ruby-lang.org/en/) <br />
 [Sinatra](https://sinatrarb.com/)<br />
 [ActiveRecord](https://guides.rubyonrails.org/active_record_basics.html)<br />
