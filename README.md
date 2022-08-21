@@ -17,21 +17,23 @@
 
 
 ## WHERE?
-[You can use the BEST SONG REVIEWS website right here!](https://majaliju.com/)
+[You can use the BEST SONG REVIEWS website right here!](https://majaliju.com/)<br />
 
-[The backend is hosted here.](https://github.com/majaliju/sinatra-react-backend)
 
-[The frontend repo is here on GitHub.](https://github.com/majaliju/sinatra-react-frontend)
+[The backend is hosted here.](https://github.com/majaliju/sinatra-react-backend)<br />
+
+
+[The frontend repo is here on GitHub.](https://github.com/majaliju/sinatra-react-frontend)<br />
 
 ## TOOLS
 On the backend, I used:
-[Ruby](https://www.ruby-lang.org/en/)
-[Sinatra](https://sinatrarb.com/)
-[ActiveRecord](https://guides.rubyonrails.org/active_record_basics.html)
-On the frontend, I used:
-[React](https://reactjs.org/)
-[ChakraUI](https://chakra-ui.com/)
+[Ruby](https://www.ruby-lang.org/en/) <br />
+[Sinatra](https://sinatrarb.com/)<br />
+[ActiveRecord](https://guides.rubyonrails.org/active_record_basics.html)<br />
+On the frontend, I used:<br />
+[React](https://reactjs.org/)<br />
+[ChakraUI](https://chakra-ui.com/)<br />
 
 ## BLOG
-[A link to my blog about phase3 can be found here, where I discuss]
+[A link to my blog about phase3 can be found here, where I discuss](https://medium.com/@majalijunyc/the-fun-of-activerecord-associations-and-the-journey-that-lead-me-to-includes-c15cabf0957)
 
