@@ -13,25 +13,25 @@
 
 
 ## A BRIEF VISUAL IN ACTION
-![add-demo](https://github.com/majaliju/sinatra-react-backend/blob/main/project3_demo.gif)
+![](https://github.com/sinatra-react-backend/project3_demo.gif)
 
 
 ## WHERE?
 [You can use the BEST SONG REVIEWS website right here!](https://majaliju.com/)
 
-[The backend is hosted here.](https://majaliju.com/)
+[The backend is hosted here.](https://github.com/majaliju/sinatra-react-backend)
 
-[The frontend repo is here on GitHub.](https://majaliju.com/)
+[The frontend repo is here on GitHub.](https://github.com/majaliju/sinatra-react-frontend)
 
 ## TOOLS
 On the backend, I used:
-[Ruby]
-[Sinatra]
-[ActiveRecord]
+[Ruby](https://www.ruby-lang.org/en/)
+[Sinatra](https://sinatrarb.com/)
+[ActiveRecord](https://guides.rubyonrails.org/active_record_basics.html)
 On the frontend, I used:
-[React]
-[ChakraUI]
+[React](https://reactjs.org/)
+[ChakraUI](https://chakra-ui.com/)
 
 ## BLOG
-[A link to my blog about phase3 can be found here, where I discuss](https://medium.com/@majalijunyc/the-fun-of-activerecord-associations-and-the-journey-that-lead-me-to-includes-c15cabf0957)
+[A link to my blog about phase3 can be found here, where I discuss]
 
