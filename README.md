@@ -13,7 +13,7 @@
 
 
 ## A BRIEF VISUAL IN ACTION
-![](https://github.com/sinatra-react-backend/project3_demo.gif)
+![add-demo](https://github.com/majaliju/sinatra-react-backend/project3_demo.gif)
 
 
 ## WHERE?
