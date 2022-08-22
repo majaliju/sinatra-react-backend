@@ -4,7 +4,8 @@
 <img src="https://img.shields.io/badge/phase3-project-red?style=flat-square&logo=ruby">
 
 ## WHAT IS THIS?
-- This is the backend repo of the BEST SONG REVIEWS website.
+- This is the backend repo of the [BEST SONG REVIEWS website](http://reviews.majaliju.com/).
+- You can also visit directly at [reviews.majaliju.com](http://reviews.majaliju.com/).
 
 ## INTRODUCTION
 
