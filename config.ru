@@ -1,5 +1,4 @@
 require_relative "./config/environment"
-
 ## added myself, for the seeding
 require "faker"
 
