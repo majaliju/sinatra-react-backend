@@ -28,8 +28,8 @@ gem "sinatra-activerecord", "~> 2.0"
 # https://github.com/ruby/rake
 gem "rake", "~> 13.0"
 
-# # Provides functionality to interact with a SQLite3 database
-# gem "sqlite3", "~> 1.4"
+# Provides functionality to interact with a SQLite3 database
+gem "sqlite3", "~> 1.4"
 
 # Require all files in a folder
 gem "require_all", "~> 3.0"
@@ -45,7 +45,7 @@ group :development do
   # Automatically reload when there are changes
   # https://github.com/alexch/rerun
   gem "rerun"
-  gem "sqlite3", "~> 1.4"
+  # gem "sqlite3", "~> 1.4"
 end
 
 # These gems will only be used when we are running tests
@@ -56,8 +56,8 @@ group :test do
   gem "rspec-json_expectations", "~> 2.2"
 end
 
-group :production do
-## postgres gems, for heroku publishing
-   gem 'pg'
-   gem 'activerecord-postgresql-adapter'
-end
+# group :production do
+# ## postgres gems, for heroku publishing
+#    gem 'pg'
+#    gem 'activerecord-postgresql-adapter'
+# end
