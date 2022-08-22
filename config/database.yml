@@ -16,6 +16,7 @@
 #   <<: *default
 #   database: db/production.sqlite3
 
+
 development:
   adapter: sqlite3
   database: database.db
@@ -31,3 +32,5 @@ production:
   username: username
   password: password
   host: localhost
+
+## config'd via http://lucaskisabeth.com/2017/06/24/deploying_your_sqlite3_sinatra_app_to_heroku_using_postgresql/
