@@ -27,4 +27,9 @@ class Song < ActiveRecord::Base
     identifier = song.id
     Review.where(:song_id => identifier).destroy_all
   end
+
+  def duplicate_checker
+    ## find a match for the current entry
+    ## if doesnt exist, then create and save
+  end
 end
