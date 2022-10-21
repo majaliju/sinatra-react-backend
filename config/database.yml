@@ -1,4 +1,6 @@
 # ## https://issuecloser.com/blog/deploying-sinatra-app-to-heroku
+## when publishing I used these 3 settings below, despite development not working
+## note to self: configure both after finishing this problem
 # development:
 #   adapter: postgresql
 #   database: database.db
@@ -10,6 +12,7 @@
 #   database: database.db
 
 # THE ORIGINAL
+## used this for working in development
 default: &default
   adapter: sqlite3
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -22,10 +25,10 @@ development:
 test:
   <<: *default
   database: db/test.sqlite3
-
-production:
-  <<: *default
-  database: db/production.sqlite3
+#### copy & pasted this from source below but couldn't configure
+# production:
+#   <<: *default
+#   database: db/production.sqlite3
 # development:
 #   adapter: sqlite3
 #   database: database.db
