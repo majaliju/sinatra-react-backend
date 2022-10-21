@@ -11,4 +11,9 @@ class Artist < ActiveRecord::Base
     ## add a case to capitalize after [&, -, /]
     self.name = self.name.split(/ |\_/).map(&:capitalize).join(" ")
   end
+
+  def duplicate_checker
+    ## find a match for the current entry
+    ## if doesnt exist, then create and save
+  end
 end
