@@ -13,8 +13,8 @@ class Genre < ActiveRecord::Base
     self.name = self.name.split(/ |\_/).map(&:capitalize).join(" ")
   end
 
-  def duplicate_checker
-    ## find a match for the current entry
-    ## if doesnt exist, then create and save
-  end
+  # def duplicate_checker
+  #   ## find a match for the current entry
+  #   ## if doesnt exist, then create and save
+  # end
 end
