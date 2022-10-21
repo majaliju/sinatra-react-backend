@@ -48,7 +48,7 @@ group :development do
   # Automatically reload when there are changes
   # https://github.com/alexch/rerun
   gem "rerun"
-  # gem "sqlite3", "~> 1.4"
+  gem "sqlite3", "~> 1.4"
 end
 
 # These gems will only be used when we are running tests
