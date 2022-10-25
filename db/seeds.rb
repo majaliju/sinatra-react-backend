@@ -33,7 +33,7 @@ g7 = Genre.create(name: "Jazz")
 
 s1 = Song.create(name: 'Distant Lover', year: 1973, artist_id: a1.id, genre_id: g1.id)
 s2 = Song.create(name: 'Scottie Beam', year: 2020, artist_id: a2.id, genre_id: g2.id)
-s3 = Song.create(name: 'Bille Jean', year: 1982, artist_id: a3.id, genre_id: g3.id)
+s3 = Song.create(name: 'Billie Jean', year: 1982, artist_id: a3.id, genre_id: g3.id)
 s4 = Song.create(name: 'Maneater', year: 1982, artist_id: a4.id, genre_id: g3.id)
 s5 = Song.create(name: 'Pete\'s Jazz', year: 2001, artist_id: a5.id, genre_id: g2.id)
 s6 = Song.create(name: 'Win', year: 1975, artist_id: a6.id, genre_id: g1.id)
