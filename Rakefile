@@ -24,11 +24,3 @@ task :console do
   Pry.start
 end
 
-## my Heroku bash commands to re-seed the DB
-task :heroku_reseed do 
-  heroku pg:reset --confirm best-music-reviews-backend
-
-heroku run rake db:migrate
-
-heroku run rake db:seed
-end
