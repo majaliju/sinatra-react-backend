@@ -31,5 +31,6 @@ class Song < ActiveRecord::Base
     ## maybe add a count for how many songs exist?
   ## this needs to be updated when a new count is pushed
   ## and needs to updated when a song is deleted
+   ## updates are reflected in the proper route within the application_controller
 
 end
