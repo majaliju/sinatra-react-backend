@@ -15,7 +15,7 @@ class Song < ActiveRecord::Base
   ## delete any artists, genres that no longer exists if song is deleted
   ## delete all reviews associated with the song also
   def cleanup
-    song = self
+    song = self   ## only named here as 'song' for visual syntax consistency 
     match1 = Song.all.select { |each| song.artist.name === each.artist.name }
     if match1.empty?
       Artist.find(song.artist_id).destroy
@@ -27,5 +27,9 @@ class Song < ActiveRecord::Base
     identifier = song.id
     Review.where(:song_id => identifier).destroy_all
   end
+
+    ## maybe add a count for how many songs exist?
+  ## this needs to be updated when a new count is pushed
+  ## and needs to updated when a song is deleted
 
 end
