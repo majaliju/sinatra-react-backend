@@ -1,29 +1,29 @@
-# ## https://issuecloser.com/blog/deploying-sinatra-app-to-heroku
-##^ when publishing I used these 3 settings below, despite development not working
-##^ note to self: configure both after finishing this problem
-development:
-  adapter: postgresql
-  database: database.db
-test:
-  adapter: postgresql
-  database: database.db
-production:
-  adapter: postgresql
-  database: database.db
-## #* THE ORIGINAL below
-# ##* used this for working in development
-# default: &default
-#   adapter: sqlite3
-#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-#   timeout: 5000
-
+# # ## https://issuecloser.com/blog/deploying-sinatra-app-to-heroku
+# ##^ when publishing I used these 3 settings below, despite development not working
+# ##^ note to self: configure both after finishing this problem
 # development:
-#   <<: *default
-#   database: db/development.sqlite3
-
+#   adapter: postgresql
+#   database: database.db
 # test:
-#   <<: *default
-#   database: db/test.sqlite3
+#   adapter: postgresql
+#   database: database.db
+# production:
+#   adapter: postgresql
+#   database: database.db
+# #* THE ORIGINAL below
+##* used this for working in development
+default: &default
+  adapter: sqlite3
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+development:
+  <<: *default
+  database: db/development.sqlite3
+
+test:
+  <<: *default
+  database: db/test.sqlite3
 ### #?
 ####? copy & pasted this from source below but couldn't configure
 # production:
