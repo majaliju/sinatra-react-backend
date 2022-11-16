@@ -7,6 +7,8 @@ class Song < ActiveRecord::Base
   before_save :title_fixer
   after_destroy :cleanup
 
+  private
+
   def title_fixer
     ## add a case to capitalize after [&, -, /]
     self.name = self.name.split(/ |\_/).map(&:capitalize).join(" ")
