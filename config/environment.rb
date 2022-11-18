@@ -6,11 +6,11 @@ ENV["RACK_ENV"] ||= "development"
 require "bundler/setup"
 Bundler.require(:default, ENV["RACK_ENV"])
 
-# ## FROM https://medium.com/@isphinxs/deploying-a-sinatra-app-to-heroku-7944b024f77c
-# set :database_file, "./database.yml"
-
 # Require in all files in 'app' directory
 require_all "app"
+
+# ## FROM https://medium.com/@isphinxs/deploying-a-sinatra-app-to-heroku-7944b024f77c
+# set :database_file, "./database.yml"
 
 # ## this recommendation comes from this https://issuecloser.com/blog/deploying-sinatra-app-to-heroku
 configure :production do
