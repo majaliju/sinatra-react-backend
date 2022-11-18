@@ -1,31 +1,33 @@
-# # ## https://issuecloser.com/blog/deploying-sinatra-app-to-heroku
-# ##^ when publishing I used these 3 settings below, despite development not working
-# ##^ note to self: configure both after finishing this problem
-# development:
-#   adapter: postgresql
-#   database: database.db
-# test:
-#   adapter: postgresql
-#   database: database.db
-# production:
-#   adapter: postgresql
-#   database: database.db
-# #* THE ORIGINAL below
-##* used this for working in development
-default: &default
-  adapter: sqlite3
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
-
+###^ https://issuecloser.com/blog/deploying-sinatra-app-to-heroku
+###^ when publishing I used these 3 settings below, despite development not working
+###^ not working after several problem fixes; forgot to push the changes
 development:
-  <<: *default
-  database: db/development.sqlite3
-
+  adapter: postgresql
+  database: database.db
 test:
-  <<: *default
-  database: db/test.sqlite3
-### #?
-####? copy & pasted this from source below but couldn't configure
+  adapter: postgresql
+  database: database.db
+production:
+  adapter: postgresql
+  database: database.db
+
+  ###* THE ORIGINAL below
+  ###* used this for working in development
+# default: &default
+#   adapter: sqlite3
+#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+#   timeout: 5000
+
+# development:
+#   <<: *default
+#   database: db/development.sqlite3
+
+# test:
+#   <<: *default
+#   database: db/test.sqlite3
+
+###? copy & pasted this from source below but couldn't configure
+####? config'd via http://lucaskisabeth.com/2017/06/24/deploying_your_sqlite3_sinatra_app_to_heroku_using_postgresql/
 # production:
 #   <<: *default
 #   database: db/production.sqlite3
@@ -37,6 +39,7 @@ test:
 #   adapter: sqlite3
 #   database: database.db
 
+# # issues with this part & postgres config to my system
 # production:
 #   adapter: postgresql
 #   # database: sch_database #rename this to whatever you want
@@ -45,4 +48,3 @@ test:
 #   password: password
 #   host: localhost
 
-# ## config'd via http://lucaskisabeth.com/2017/06/24/deploying_your_sqlite3_sinatra_app_to_heroku_using_postgresql/
