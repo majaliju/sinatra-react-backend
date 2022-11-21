@@ -10,9 +10,8 @@ test:
 production:
   adapter: postgresql
   database: database.db
-
-  ###* THE ORIGINAL below
-  ###* used this for working in development
+# ##* THE ORIGINAL below
+# ##* used this for working in development
 # default: &default
 #   adapter: sqlite3
 #   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -25,7 +24,6 @@ production:
 # test:
 #   <<: *default
 #   database: db/test.sqlite3
-
 ###? copy & pasted this from source below but couldn't configure
 ####? config'd via http://lucaskisabeth.com/2017/06/24/deploying_your_sqlite3_sinatra_app_to_heroku_using_postgresql/
 # production:

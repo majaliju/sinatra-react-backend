@@ -1,6 +1,4 @@
 require_relative "./config/environment"
-## the faker gem is here for seeding
-require "faker"
 
 # Allow CORS (Cross-Origin Resource Sharing) requests
 use Rack::Cors do

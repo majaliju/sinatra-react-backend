@@ -24,10 +24,10 @@ task :console do
   Pry.start
 end
 
-desc "Seed Heroku with the proper info"
-task :heroku_seed do
-  ## doesn't work because the shell commands are for Heroku, not in ruby
-  heroku pg:reset --confirm best-music-reviews-backend
-  heroku run rake db:migrate
-  heroku run rake db:seed
-end
+# desc "Seed Heroku with the proper info"
+# task :heroku_seed do
+#   ## doesn't work because the shell commands are for Heroku, not in ruby
+#   heroku pg:reset --confirm best-music-reviews-backend
+#   heroku run rake db:migrate
+#   heroku run rake db:seed
+# end

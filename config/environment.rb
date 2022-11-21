@@ -9,6 +9,9 @@ Bundler.require(:default, ENV["RACK_ENV"])
 # Require in all files in 'app' directory
 require_all "app"
 
+## the faker gem is here for seeding
+require "faker"
+
 # ## FROM https://medium.com/@isphinxs/deploying-a-sinatra-app-to-heroku-7944b024f77c
 # set :database_file, "./database.yml"
 

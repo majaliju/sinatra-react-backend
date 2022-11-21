@@ -13,4 +13,8 @@ class Genre < ActiveRecord::Base
     self.name = self.name.split(/ |\_/).map(&:capitalize).join(" ")
   end
 
+  def self.how_many
+    self.count
+  end
+
 end

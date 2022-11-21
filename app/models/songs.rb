@@ -30,9 +30,9 @@ class Song < ActiveRecord::Base
     Review.where(:song_id => identifier).destroy_all
   end
 
-    ## maybe add a count for how many songs exist?
-  ## this needs to be updated when a new count is pushed
-  ## and needs to updated when a song is deleted
-   ## updates are reflected in the proper route within the application_controller
+  def self.how_many
+    self.count
+  end
+
 
 end

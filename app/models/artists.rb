@@ -7,11 +7,16 @@ class Artist < ActiveRecord::Base
   accepts_nested_attributes_for :genres, :songs
   before_save :title_fixer
 
+  private
+
   ## corrects the title capitilzation
   def title_fixer
     ## add a case to capitalize after [&, -, /]
     self.name = self.name.split(/ |\_/).map(&:capitalize).join(" ")
   end
 
- 
+  def self.how_many
+    self.count
+  end
+
 end
