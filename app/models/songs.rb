@@ -30,6 +30,7 @@ class Song < ActiveRecord::Base
     Review.where(:song_id => identifier).destroy_all
   end
 
+   # gives us an int value tally of how many instances there are
   def self.how_many
     self.count
   end
