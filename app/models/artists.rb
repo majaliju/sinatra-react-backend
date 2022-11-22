@@ -15,6 +15,7 @@ class Artist < ActiveRecord::Base
     self.name = self.name.split(/ |\_/).map(&:capitalize).join(" ")
   end
 
+  # gives us an int value tally of how many instances there are
   def self.how_many
     self.count
   end
