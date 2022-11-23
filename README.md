@@ -24,12 +24,24 @@ From there, feel free to run
 
 [fork link]: https://github.com/majaliju/sinatra-react-backend/fork
 
-You can start up a local server by going to a terminal and typing in: 
+To start up migrations and get the database in action:
+```console
+$ bundle exec rake db:migrate 
+```
+
+To seed the database with some starter information (supplied within db/seeds.rb):
+```console
+$ bundle exec rake db:seed
+```
+
+After this, you can start up a local server by going to a terminal and typing in: 
 ```console
 $ bundle exec rake server
 ```
 By default, the above command will run your server on:
 [http://localhost:9292](http://localhost:9292).
+
+
 
 - NOTE: currently this is deployed to Heroku via postgres but is going to be migrated soon to Render. It's currently configured to deploy to Heroku but to be able to use it on your local machine, follow the instructions in WORKAROUND-NOTE.md file. This backend is going to be deployed to Render and this is a quick workaround in the meantime. From the future moving on, you will be able to deploy it locally without any adjustments. ***
 
