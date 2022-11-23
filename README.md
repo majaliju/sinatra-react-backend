@@ -22,7 +22,7 @@
 From there, feel free to run
 `bundle install` to install the gems.
 
-[fork link]: https://github.com/majaliju/sinatra-react-backend
+[fork link]: https://github.com/majaliju/sinatra-react-backend/fork
 
 You can start up a local server by going to a terminal and typing in: 
 ```console
