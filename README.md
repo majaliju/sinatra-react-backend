@@ -16,6 +16,23 @@
 ## A BRIEF VISUAL IN ACTION
 ![add-demo](https://github.com/majaliju/sinatra-react-backend/blob/main/project3_demo.gif)
 
+## INSTALLATION
+
+[**You can fork a copy here**][fork link] of this backend repo. After you fork it then clone it to your local machine. 
+From there, feel free to run
+`bundle install` to install the gems.
+
+[fork link]: https://github.com/majaliju/sinatra-react-backend
+
+You can start up a local server by going to a terminal and typing in: 
+```console
+$ bundle exec rake server
+```
+By default, the above command will run your server on port
+[http://localhost:9292](http://localhost:9292).
+
+** NOTE: currently this is deployed to Heroku via postgres but is going to migrated soon to Render. It's currently configured to run on your local server but will need re-configuration of the database.yml file for Heroku deployment. There is a workaround within the WORKAROUND-NOTE.md as a temporary fix. This will be updated soon with a proper and cohesive deployment. **
+
 
 ## WHERE?
 [You can use the BEST SONG REVIEWS website right here!](https://majaliju.com/)<br />
