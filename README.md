@@ -31,7 +31,7 @@ $ bundle exec rake server
 By default, the above command will run your server on:
 [http://localhost:9292](http://localhost:9292).
 
-### NOTE: currently this is deployed to Heroku via postgres but is going to migrated soon to Render. It's currently configured to run on your local server but will need re-configuration of the database.yml file for Heroku deployment. There is a workaround within the WORKAROUND-NOTE.md as a temporary fix. This will be updated soon with a proper and cohesive deployment. 
+*** NOTE: currently this is deployed to Heroku via postgres but is going to migrated soon to Render. It's currently configured to run on your local server but will need re-configuration of the database.yml file for Heroku deployment. There is a workaround within the WORKAROUND-NOTE.md as a temporary fix. This will be updated soon with a proper and cohesive deployment. ***
 
 
 ## WHERE?
